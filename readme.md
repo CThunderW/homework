@@ -2,6 +2,7 @@
 
 this repository contains my homework solutions for CodeCore Developer BootCamp.
 
+
 #Contributors
 
 cale
@@ -13,3 +14,6 @@ syed
 
 #License
 MIT
+
+#Getting Started
+clone the repository and have fun!
