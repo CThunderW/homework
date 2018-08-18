@@ -129,7 +129,7 @@ class Turtle {
                     if(c !== -1){
                         temp.push("●");
                         } else if(c === -1){
-                            temp.push("x");
+                            temp.push(" ");
                         }                
                 }
                 yPlane.push(temp);
