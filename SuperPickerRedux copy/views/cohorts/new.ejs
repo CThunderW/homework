@@ -1,0 +1,19 @@
+<%- include("../partials/header") %> 
+<div class="ml-2">
+<form action="/newSolo" method="POST">
+    <div>
+        <label for="cohort_name">Cohort Name:</label><br>
+        <input type="text" name="cohort_name" style="border-radius: 5px" placeholder="cohort_name"><br><br>
+    </div>
+    <div>
+        <label for="logo_url">Logo Url:</label><br>
+        <input type="text" name="logo_url" style="border-radius: 5px" placeholder="logo_url"><br><br>
+    </div>
+    <div>
+        <label for="cohort_members">Cohort Members:</label><br>
+        <textarea name="cohort_members" style="border-radius: 5px" placeholder="Please, enter, the, members, of, the, group, SEPARATED, BY, COMMAS" rows = "5" cols = "60"></textarea><br><br>
+    </div>
+    <input type="submit" value="Create New Cohort" class="btn btn-outline-success">
+</form>
+</div>
+<%- include("../partials/footer") %> 

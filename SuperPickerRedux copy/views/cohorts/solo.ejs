@@ -1,0 +1,59 @@
+
+
+<%- include("../partials/header") %> 
+<div class="d-flex justify-content-center align-items-center">
+    <div class="card mt-3 d-flex justify-content-center align-items-center" style="width: 24rem;">
+    <img class="card-img-top" src="<%=cohort.logo_url%>" alt="Card image cap">
+        <div class="card-body">
+            <h3 class="card-title"> Cohort: <%=cohort.cohort_name%> </h3>
+            <hr>
+            <div>
+            <h4>Members: </h4>
+            <%=cohort.cohort_members%> 
+                </div>
+            <div>
+            <hr class="my-*-8">
+                <form action="/solo/<%= cohort.id %>">
+                    <h3>Sort Method:</h3>
+                    <input type="radio" name="sortMethod" value="teamCount" checked> Group by number of teams!<br>
+                    <input type="radio" name="sortMethod" value="memberCount"> Group by number of members per team!<br>
+                    <input class="mr-1" style="border-radius: 5px" type="number" name="number" value="<%=number%>" min="1" max="<%=cohort.cohort_members.split(",").length %>"><label for="number">  Number of Teams / Team Members</label> <br/>
+                    <input type="submit" value="PICK TEAMS!" class ="btn btn-block btn-primary">
+                </form>
+            <hr class="mt-8 mb-8">
+                <form action="/solo/<%=cohort.id%>" method="post">
+                <div class="d-flex justify-content-around">
+                <a href="/solo/<%=cohort.id%>/edit" class="btn btn-warning">Edit Cohort</a>
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete Cohort" class="btn btn-danger">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% if(finalTeams) { %>
+    <div class="card mb-3"></div>
+        <div class = "card-body">
+            <table class="table">
+                <thread>
+                <tr>
+                    <th scope = "col"> Team #</th>
+                    <th scope = "col"> Members</th>
+                </tr>
+                </thread>
+                <tbody>
+                <% finalTeams.forEach((val,ind) => { %>
+                    <tr> 
+                    <th scope="row"><%= ind + 1 %></th>
+                    <td><%= val.join(", ") %> </td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+<% } %>            
+            
+</div>
+<%- include("../partials/footer") %> 

@@ -1,0 +1,22 @@
+<%- include("../partials/header") %> 
+
+<div class="ml-2">
+<form action="/solo/<%= cohort.id %>" method="POST">
+<input type="hidden" name="_method" value="PATCH" style="border-radius: 5px">
+    <div>
+        <label for="cohort_name">Cohort Name:</label><br>
+        <input type="text" name="cohort_name" style="border-radius: 5px" value="<%=cohort.cohort_name%>"><br><br>
+    </div>
+    <div>
+        <label for="logo_url">Logo Url:</label><br>
+        <input type="text" name="logo_url" style="border-radius: 5px" value="<%=cohort.logo_url%>"><br><br>
+    </div>
+    <div>
+        <label for="cohort_members">Cohort Members:</label><br>
+        <textarea name="cohort_members" value = "" rows = "5" cols = "60" style="border-radius: 5px"><%=cohort.cohort_members%></textarea><br><br>
+    </div>
+    <input type="submit" value="Save Changes to Cohort" class="btn btn-outline-success">
+</form>
+</div>
+
+<%- include("../partials/footer") %> 
