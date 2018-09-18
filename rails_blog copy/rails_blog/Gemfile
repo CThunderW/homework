@@ -50,6 +50,10 @@ group :development do
   gem 'pry-rails'
   gem 'hirb'
   gem 'faker'
+  gem 'bootstrap'
+  gem 'jquery-rails'
+  gem 'cancancan'
+
 end
 
 
